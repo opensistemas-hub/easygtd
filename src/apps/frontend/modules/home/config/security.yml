@@ -1,0 +1,6 @@
+account:
+  is_secure:  yes
+show_settings:
+  is_secure:  yes
+helper:
+  is_secure:  yes

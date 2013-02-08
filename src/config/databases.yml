@@ -1,0 +1,8 @@
+dev:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=localhost;dbname=easygtd_dev'
+      username: easygtd_dev_user
+      password: easygtd_dev_password
+

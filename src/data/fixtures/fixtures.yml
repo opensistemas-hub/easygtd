@@ -1,0 +1,96 @@
+StuffState:
+ on_inbox:
+  name: ON_INBOX
+ processing:
+  name: PROCESSING
+ processed:
+  name: PROCESSED
+
+ActualProject:
+  actual_project:
+FutureProject:
+  future_project:
+CompletedProject:
+  completed_project:
+
+SavedSearch:
+  mySavedSearch:
+    name: mySavedSearch1
+    sfGuardUser: easygtd
+
+
+TypeFocus:
+  type_focus:
+    SavedSearch: mySavedSearch
+
+ContextFocus:
+  context_focus:
+    SavedSearch: mySavedSearch
+
+TimeFocus:
+  time_focus:
+    SavedSearch: mySavedSearch
+
+EnergyFocus:
+  energy_focus:
+    SavedSearch: mySavedSearch
+
+PriorityFocus:
+  priority_focus:
+    SavedSearch: mySavedSearch
+
+DoneFocus:
+  done_focus:
+    SavedSearch: mySavedSearch
+    
+ProjectFocus:
+  project_focus:
+    SavedSearch: mySavedSearch
+
+DueTodayFocus:
+  project_focus:
+    SavedSearch: mySavedSearch
+
+OnlyDateFocus:
+  project_focus:
+    SavedSearch: mySavedSearch
+
+ToDo:
+ to_do:
+  name: To do
+
+Done:
+ done:
+  name: Done
+ 
+Notificated:
+ notificated:
+  name: Notificated to collaborator
+
+Delivered:
+ delivered:
+  name: Delivered on inbox from a collaborator
+
+SfGuardUser:
+ easygtd:
+  username: easygtd
+  password: easygtd
+  is_super_admin: true
+  
+
+Reference:
+  reference_001:
+    name: mi_referencia
+    sfGuardUser: easygtd
+
+Folder:
+  folder_001:
+    name: mi libreta
+    sfGuardUser: easygtd
+
+NoActionableItemFolder:
+  actionable_002:
+     NoActionableItem: reference_001
+     Folder: folder_001
+
+

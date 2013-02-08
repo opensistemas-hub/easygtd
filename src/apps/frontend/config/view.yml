@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        EasyGTD
+    #description:  symfony project
+    #keywords:     symfony, project
+    language:     en
+    #robots:       index, follow
+
+  stylesheets:    [style.css]
+
+  javascripts:    [jquery/jquery-1.4.2.js,app/jquery_no_conflict.js,jquery/jquery.corner.js,app/messages.js,jquery/jquery.jnotify.min.js]
+
+  has_layout:     true
+  layout:         layout

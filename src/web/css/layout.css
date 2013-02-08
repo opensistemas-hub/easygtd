@@ -1,0 +1,699 @@
+@charset "UTF-8";
+
+body {
+     background-color: #FFFFFF;
+     margin-left: auto;
+     margin-right: auto;
+     padding-bottom: 10px;
+     padding-left: 18px;
+     padding-right: 18px;
+}
+
+#content {
+     margin-bottom: 5px;
+     margin-top: 5px;
+}
+
+.footer {
+     border-top: 1px solid #C2C2C2;
+     color: #919191;
+     margin-left: auto;
+     margin-right: auto;
+     padding-top: 5px;
+     text-align: center;
+     width: 100%;
+}
+
+.float-left {
+     float: left;
+}
+
+.float-right {
+     float: right;
+}
+
+.float-left-full {
+     float: left;
+     width: 100%;
+}
+
+.float-right-full {
+     float: right;
+     width: 100%;
+}
+
+#wrapper {
+    
+}
+
+#app-top-settings {
+     float: right;
+     font-size: 11px;
+     margin-top: 4px;
+     text-align: justify;
+  height:11px;
+}
+
+#app-top-settings a {
+     font-size: 11px;
+}
+
+#app-top {
+     background-color: #C2C2C2;
+     height: 50px;
+     margin-top: 6px;
+}
+
+#app-middle {
+     width: 100%;
+}
+
+#header {
+     height: 50px;
+     width: 100%;
+}
+
+#header-menu {
+     float: left;
+     height: 50px;
+     margin-left: auto;
+     margin-right: auto;
+     text-align: center ! important;
+}
+
+#header-logo {
+     background: url("../../images/easygtd-small.gif") no-repeat scroll center center transparent;
+     cursor: pointer;
+     float: left;
+     height: 44px;
+     margin-right: 0px;
+     overflow: hidden;
+     padding-top: 9px;
+     width: 135px;
+}
+
+#bar-big {
+     background-color: #C2C2C2;
+     margin-bottom: 5px;
+     text-align: left;
+}
+
+#bar-big-wrapper {
+     background: url("../../images/bar-big-bck.gif") repeat-x scroll 0% 0% transparent;
+     height: 36px;
+     width: 100%;
+}
+
+#bar-big .ico-home {
+     margin-left: 12px;
+}
+
+.bar-big-to {
+     background: url("../../images/bar-big-to.gif") no-repeat scroll center center transparent;
+     float: left;
+     height: 36px;
+     width: 40px;
+}
+
+#bar-big-left {
+     float: left;
+     overflow: hidden;
+     width: 45%;
+}
+
+.bar-big-text {
+     float: left;
+     font-size: 15px;
+     height: 24px;
+     padding-left: 11px;
+     padding-right: 11px;
+     padding-top: 10px;
+}
+
+.bar-big-text a:link, .bar-big-text a:active, .bar-big-text a:visited {
+     color: #666666 ! important;
+     font-size: 15px ! important;
+     font-weight: normal ! important;
+     text-decoration: none;
+}
+
+.bar-big-text a:hover {
+     color: #00ABCF ! important;
+}
+
+#bar-big-text-right {
+     float: right;
+     height: 100%;
+     margin-right: 10px;
+     overflow: hidden;
+     width: 50%;
+}
+
+#bar-big-text-right a.float-left {
+     float: right;
+}
+
+#bar-big-text-right a:link, #bar-big-text-right a:active, #bar-big-text-right a:visited {
+     border-right: 1px solid #B7B7B7;
+     color: #666666 ! important;
+     height: 26px;
+     overflow: hidden;
+     padding-left: 5px;
+     padding-right: 5px;
+     padding-top: 10px;
+     text-decoration: none;
+}
+
+#bar-big-text-right a.first {
+     border-left: 1px solid #B7B7B7;
+}
+
+#bar-big-text-right a img {
+     margin-right: 2px ! important;
+     position: relative;
+     top: -7px;
+}
+
+#bar-big-text-right a:hover {
+     background: url("../../images/bar-big-bck-hover.gif") repeat-x scroll 0% 0% transparent;
+     color: #00ABCF ! important;
+}
+
+#principal {
+     border: 1px solid #C2C2C2;
+     min-height: 200px;
+}
+
+table.list {
+     margin-bottom: 0px;
+     width: 98%;
+}
+
+table.list tr {
+    
+}
+
+table.list tr td div.info_wrapper {
+     background-color: #C2C2C2;
+     padding: 1px ! important;
+}
+
+table.list tr td div.info {
+     background-color: #FFFFFF;
+     padding: 5px;
+}
+
+table.list tr td div.info_status {
+     float: left;
+     text-align: center;
+     width: 40px;
+}
+
+table.list tr td div.info_list {
+     float: left;
+     width: 80%;
+}
+
+table.list tr td div.info_options {
+     float: right;
+     text-align: right;
+     width: 15%;
+}
+
+table.list tbody td div img {
+     margin-right: 2px;
+     vertical-align: middle;
+}
+
+table.list tbody td img {
+     height: 16px;
+     vertical-align: middle;
+}
+
+table.list tbody tr td {
+     padding-bottom: 2px;
+     padding-top: 2px;
+}
+
+table.list a {
+     text-decoration: none;
+}
+
+.list-stuff {
+    
+}
+
+.content-sidebar-category {
+     height: 24px;
+     padding-bottom: 10px;
+     padding-left: 19px;
+     padding-top: 5px;
+     text-align: left;
+}
+
+#content-biglogo {
+     padding-top: 30px;
+     text-align: left;
+}
+
+#content-option {
+     padding-top: 30px;
+}
+
+#content-marker-start {
+     background: url("../../images/play-small.gif") no-repeat scroll right top transparent;
+     float: left;
+     height: 31px;
+     width: 127px;
+}
+
+.content-marker {
+     background: url("../../images/play-small.gif") no-repeat scroll right top transparent;
+     float: left;
+     height: 40px;
+     width: 35px;
+}
+
+.content-element {
+     float: left;
+     text-align: left;
+     width: 167px;
+}
+
+.content-header {
+     height: 18px;
+     padding-bottom: 19px;
+     padding-left: 55px;
+     padding-top: 10px;
+     text-align: left;
+     vertical-align: middle;
+}
+
+.content-with-shade {
+     background: url("../../images/bck-content-shade.jpg") repeat-x scroll center top transparent;
+     margin-bottom: 0px;
+     padding-bottom: 0px;
+     padding-top: 5px;
+     width: 100%;
+}
+
+#title {
+     padding-top: 7px;
+}
+
+.content-with-shade-flexible {
+     background: url("../../images/bck-content-shade.jpg") repeat-x scroll center top transparent;
+     float: left;
+     padding: 19px;
+     text-align: left;
+}
+
+.content-general {
+     float: left;
+     text-align: left;
+}
+
+.content-general-with-mark {
+     background: url("../../images/play-small.gif") no-repeat scroll left top transparent;
+     margin-left: 20px;
+     margin-right: 20px;
+     margin-top: 10px;
+     padding: 2px 25px 5px;
+     text-align: justify;
+}
+
+.float-left-full {
+     float: left;
+     width: 95%;
+}
+
+.float-right-full {
+     float: right;
+     width: 95%;
+}
+
+#attachments {
+     background: url("../../images/bck-attachments.gif") no-repeat scroll left top transparent;
+     padding: 7px 35px 4px 18px;
+}
+
+#form-part1 {
+    
+}
+
+#form-part2 {
+     padding-left: 35px;
+}
+
+#form-part3 {
+     padding-left: 35px;
+     padding-right: 35px;
+}
+
+.content-header-padding {
+     float: right;
+     margin-right: 31px;
+     padding-top: 5px;
+     position: relative;
+     text-align: right;
+}
+
+.content-header-padding-left {
+     float: left;
+     padding-top: 5px;
+}
+
+.content-header-text {
+     float: left;
+     height: 20px;
+     margin-left: 5px;
+     margin-right: 5px;
+     padding-top: 8px;
+}
+
+#content-header-question {
+     background: url("../../images/icons/dot-big-blue-question.gif") no-repeat scroll center top transparent;
+     float: right;
+     height: 30px;
+     width: 260px;
+}
+
+#header-search {
+     float: right;
+     padding-top: 14px;
+     width: 135px;
+}
+
+#content-marker-title {
+     padding-top: 7px;
+}
+
+.content-inline {
+     float: left;
+     margin-bottom: 4px;
+     margin-left: -40px;
+     margin-top: 5px;
+     padding-left: 50px;
+     padding-top: 0px;
+     position: relative;
+     width: 100%;
+}
+
+.content-inline-1 {
+     float: right;
+     height: 24px;
+     width: 24px;
+}
+
+.content-inline-2 {
+     float: left;
+     height: 24px;
+     padding-left: 19px;
+     padding-right: 19px;
+     width: 185px;
+}
+
+.content-inline-3 {
+     float: left;
+     height: 24px;
+     left: 22px;
+     position: relative;
+}
+
+.content-inline-4 {
+     float: left;
+     height: 24px;
+}
+
+.content-inline-5 {
+     float: right;
+     height: 24px;
+     width: 60px;
+}
+
+.content-inline-6 {
+     float: right;
+     height: 24px;
+     width: 210px;
+}
+
+.line {
+     border-top: 1px solid #CCCCCC;
+     float: left;
+     margin-left: -5px;
+     margin-top: 5px;
+     width: 100%;
+}
+
+.content-inline-text {
+     float: left;
+     padding-right: 5px;
+     padding-top: 10px;
+}
+
+#content-inline-first {
+     margin-bottom: 0px;
+     padding-bottom: 0px;
+     width: 100%;
+}
+
+#add-project {
+     padding-left: 50px;
+     padding-top: 15px;
+}
+
+.block-float-left {
+     margin-left: 5%;
+     position: relative;
+}
+
+.clear {
+     clear: both;
+}
+
+.attachment-list {
+     margin-left: 3%;
+     position: relative;
+}
+
+.action-list {
+     width: 100%;
+}
+
+.render-content-context {
+     background-color: red;
+     position: relative;
+     width: 800px;
+}
+
+.project-panel {
+     left: 315px;
+     position: relative;
+     top: -571px;
+}
+
+.criterias-panel {
+    
+}
+
+.time-panel {
+     left: 184px;
+     position: relative;
+     top: -95px;
+}
+
+.energy-panel {
+     left: 294px;
+     position: relative;
+     top: -134px;
+}
+
+.priority-panel {
+     left: 376px;
+     position: relative;
+     top: -173px;
+}
+
+.dinamic-next-action {
+     left: 181px;
+     position: relative;
+     top: -85px;
+}
+
+.clean {
+     clear: both;
+}
+
+.left-content {
+     float: left;
+     width: 2%;
+}
+
+.borders-columns-left {
+     float: left;
+     height: 3000px;
+     left: 0%;
+     position: absolute;
+     width: 11px;
+     z-index: 1000;
+}
+
+.borders-columns-left .up {
+     background: url("../../images/left-middle.png") repeat scroll 0% 0% transparent;
+     height: 10%;
+}
+
+.borders-columns-left .down {
+     background: url("../../images/left-middle-down.png") repeat-y scroll 0% 0% transparent;
+     min-height: 1000%;
+}
+
+.borders-columns-center {
+     display: none;
+     float: left;
+     height: 3000px;
+     left: 13%;
+     margin-left: 4px;
+     position: absolute;
+     width: 10px;
+     z-index: 1000;
+}
+
+.borders-columns-center .up {
+     background: url("../../images/middle-middle.png") repeat scroll 0% 0% transparent;
+     height: 10%;
+}
+
+.borders-columns-center .down {
+     background: url("../../images/middle-middle-down.png") repeat-y scroll 0% 0% transparent;
+     min-height: 1000%;
+}
+
+.borders-columns-right {
+     float: left;
+     height: 3000px;
+     left: 99%;
+     margin-left: 4px;
+     position: absolute;
+     width: 10px;
+     z-index: 1000;
+}
+
+.borders-columns-right .up {
+     background: url("../../images/right-middle.png") repeat scroll 0% 0% transparent;
+     height: 11%;
+}
+
+.borders-columns-right .down {
+     background: url("../../images/right-middle-down.png") repeat-y scroll 0% 0% transparent;
+     min-height: 1000%;
+}
+
+.alertwindow {
+     background: url("../../images/bck-form-textarea.jpg") repeat-x scroll center top #FFFFFF;
+     border: 1px solid #00ABCF;
+     padding: 20px;
+     position: relative;
+     z-index: 1;
+}
+
+#content .normal, .normal {
+     padding-left: 20px;
+}
+
+#advance-panel {
+     margin-bottom: 5px;
+}
+
+.normal div.etiqueta {
+     float: left;
+     margin-right: 5px;
+     text-align: right;
+     width: 25%;
+}
+
+.normal div.valor {
+     float: left;
+     text-align: left;
+     width: 73%;
+}
+
+.normal div.full select {
+     width: 98%;
+}
+
+.normal div.valor ul li {
+     margin-bottom: 5px;
+}
+
+.normal div.valor ul li ul li {
+     margin-bottom: 0px;
+     margin-left: 20px;
+     margin-top: 0px;
+     padding-bottom: 0px;
+     padding-top: 0px;
+}
+
+.normal div.valor ul li ul li span {
+     display: block;
+     float: left;
+     margin-right: 2px;
+     padding-top: 2px;
+     text-align: right;
+     width: 45%;
+}
+
+.normal div.valor ul li ul li select {
+     float: left;
+     font-size: 11px;
+     height: 19px;
+     margin-bottom: 0px;
+     padding-bottom: 0px;
+     width: 53%;
+}
+
+.normal div.valor ul li ul li input {
+     float: left;
+     font-size: 11px;
+     margin-bottom: 5px;
+     padding-bottom: 0px;
+     width: 24%;
+}
+
+.normal div.boton {
+     float: left;
+     text-align: right;
+     width: 73%;
+}
+
+.normal div.valor label.error {
+     float: left;
+     height: 16px;
+     margin-bottom: 5px;
+     margin-left: 3px;
+}
+
+.normal div.valor ul li ul li label.error {
+     float: left;
+     margin-left: 3px;
+}
+
+#focus {
+     float: left;
+     margin: 0px 0px 20px;
+     overflow: hidden;
+     padding: 0px;
+     width: 200px;
+}
+
+#todo_list {
+     float: left;
+     overflow: hidden;
+}
+
+.project_actions {
+     margin-left: 50px;
+     margin-top: 10px;
+     width: 115%;
+}
+

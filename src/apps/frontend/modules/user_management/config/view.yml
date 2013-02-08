@@ -1,0 +1,2 @@
+editSuccess:
+ javascripts:    [app/jquery/jquery.validate.js,app/jquery/jquery.metadata.js]

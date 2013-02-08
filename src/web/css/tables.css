@@ -1,0 +1,124 @@
+/*
+Tema: Blue - Minimalist design in blue
+Author: Newton de GÃ³es Horta
+Site: http://www.nghorta.com
+Country Origin: Brazil
+*/
+
+
+#rounded-corner
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 10px;
+	/*margin: 45px;*/
+	
+	text-align: left;
+	border-collapse: collapse;
+}
+#rounded-corner thead th.rounded-lefts
+{
+	background: #b9c9fe url('/images/bar-big-bck.gif');
+}
+#rounded-corner thead th.rounded-rights
+{
+	background: #b9c9fe url('/images/bar-big-bck.gif');
+}
+#rounded-corner th
+{
+	padding: 8px;
+	font-weight: normal;
+	font-size: 13px;
+	
+	background: #b9c9fe url('/images/bar-big-bck.gif') ;
+}
+#rounded-corner td
+{
+	padding: 8px;
+	background: #fff;
+	border-top: 1px solid #fff;
+	color: #669;
+}
+#rounded-corner tfoot td.rounded-foot-left
+{
+	background: #fff;
+}
+#rounded-corner tfoot td.rounded-foot-right
+{
+	background: #fff;
+}
+#rounded-corner tbody tr:hover td
+{
+	background: #f3f3f3;
+}
+
+
+
+
+div.tabla
+{
+	clear: none;
+	overflow: visible;
+	margin-left:0;
+	margin-right: -1%;
+	position:relative;
+	
+}
+
+div.fila
+{
+	clear: both;
+}
+
+div.col_titulo
+{
+	float: left;
+	padding: 5px;
+	background: url('../images/bar-small-bck.gif');
+	border-color: #F0E0A0;
+	/*border-style: solid;*/
+	border-right-width: 0px;
+	border-left-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 1px;
+	height: 9px;
+}
+
+div.col_titulo2
+{
+	float: left;
+	padding: 5px;
+	background: url('../images/bar-small-bck.gif');
+	border-color: #F0E0A0;
+	/*border-style: solid;*/
+	border-right-width: 0px;
+	border-left-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 1px;
+	height: 9px;
+  text-indent: 20px;
+}
+
+div.col
+{
+	float: left;
+	padding: 5px;
+	border-color: #F0E0A0;
+	/*border-style: solid;*/
+	border-right-width: 0px;
+	border-left-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 1px;
+}
+
+div.col2
+{
+	float: left;
+	padding: 10px;
+	border-color: #F0E0A0;
+	/*border-style: solid;*/
+	border-right-width: 0px;
+	border-left-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 1px;
+}
+

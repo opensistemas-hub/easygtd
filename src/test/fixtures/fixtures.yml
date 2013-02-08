@@ -1,0 +1,184 @@
+StuffState:
+ on_inbox:
+  name: ON_INBOX
+ processing:
+  name: PROCESSING
+ processed:
+  name: PROCESSED
+
+ProjectState:
+ alive_project:
+  name: ALIVE_PROJECT
+ future_project:
+  name: FUTURE_PROJECT
+ 
+User:
+ alex:
+  name: Alex Luengo
+  email: aluengo@opensistemas.com
+  password: 1d552001fb6d05762623436ae60dff33 # .user.
+ leo:
+  name: Leo Barrientos C.
+  email: lbarrientos@opensistemas.com
+  password: 1d552001fb6d05762623436ae60dff33 # .user. 
+
+Stuff:
+ stuff_001:
+  name: Comprar lápices
+  description: 1 azul, 1 verde.
+  StuffState: on_inbox
+  User: leo
+ stuff_002:
+  name: Comprar lápices de pizarra
+  description: 1 azul, 1 verde, 1 rojo
+  StuffState: on_inbox
+  User: alex
+ stuff_003:
+  name: Entradas Dream Theater
+  description: 1 ticket VIP.
+  StuffState: processed
+  User: leo
+
+StuffAttachment:
+ stuff_attachment_001:
+  value: 34341d552001fb6d05762623436ae60dff334333mi-archivo.txt
+  Stuff: stuff_001
+ stuff_attachment_002:
+  value: 34341d552001fb6d05762623436ae60dff334333mi-archivo.txt
+  Stuff: stuff_002
+
+ToDo:
+ to_do:
+  name: To do
+
+Done:
+ done:
+  name: Done
+ 
+Notificated:
+ notificated:
+  name: Notificated to collaborator
+
+Delivered:
+ delivered:
+  name: Delivered on inbox from a collaborator
+
+DoItNow:
+ do_it_now_001:
+  name: Call to my mother
+  description: 98231341
+  NextActionState: to_do
+  User: leo
+  
+DoASAP:
+ do_asap_001:
+  name: Buy Tickets in Falabella to Dream Theater
+  description: 1 Tickets.
+  NextActionState: to_do
+  User: leo
+ do_asap_002:
+  name: Call to my grand mother
+  description: 98231341
+  NextActionState: to_do
+  User: leo
+
+Delegated:
+ delegated_001:
+  name: Get the number of uncle Tom
+  description: 
+  NextActionState: to_do
+  User: leo
+
+Scheduled:
+ scheduled_001:
+  name: Call to my uncle Mary
+  description: 9823132123
+  NextActionState: to_do
+  User: leo
+
+DueDate:
+ next_action_info_001:
+  value: '2010-02-10'
+  NextAction: do_asap_002
+
+DelegatedTo:
+ next_action_info_002:
+  value: pcastro@opensistemas.com
+  NextAction: delegated_001
+
+ToDoInDate:
+ next_action_info_003:
+  value: '2010-02-12'
+  NextAction: delegated_001
+
+FollowUpDate:
+ next_action_info_004:
+  value: '2010-02-12 19:00:00'
+  NextAction: scheduled_001
+
+
+NextActionStuff:
+ related_next_action_stuff_001:  
+  NextAction: do_asap_001
+  Stuff: stuff_003
+
+Criteria:
+
+    context_home:
+        value: home
+        unit:
+        User: leo
+        type: CONTEXT
+
+    context_homes:
+        value: homes
+        unit:
+        User: alex
+        type: CONTEXT
+
+    time_five_minutes_leo:
+        value: 5
+        unit: minutes
+        User: leo
+        type: TIME_AVAILABLE
+
+    time_five_minutes:
+        value: 5
+        unit: minutes
+        User: alex
+        type: TIME_AVAILABLE
+
+    priority_top:
+        value: Must
+        unit:
+        User: alex
+        type: PRIORITY
+
+    priority_top_must:
+        value: Must
+        unit:
+        User: leo
+        type: PRIORITY
+
+    energy_lazy:
+        value: Lazy
+        unit:
+        User: leo
+        type: ENERGY
+
+    energy_lazys:
+        value: Lazys
+        unit:
+        User: alex
+        type: ENERGY
+
+
+Project:
+  project_001:
+    User: alex
+    Name: My First Project Alex
+    ProjectState: future_project
+  project_002:
+    User: leo
+    Name: My First Project Leo
+    ProjectState: alive_project

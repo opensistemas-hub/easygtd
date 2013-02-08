@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+/* Welcome to EasyGTD General CSS Properties*/
+
+@import url("reset.css");
+@import url("layout.css");
+@import url("typography.css");
+@import url("menu.css");
+@import url("tables.css");
+@import url("tools.css");
+@import url("forms.css");
+/*@import url("ie.css");*/
+

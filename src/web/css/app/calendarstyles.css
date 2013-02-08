@@ -1,0 +1,8 @@
+.delegated,
+.fc-agenda .delegated .fc-event-time,
+.delegated a {
+    background-color: green; /* background color */
+    border-color: green;     /* border color */
+    color: yellow;           /* text color */
+    }
+

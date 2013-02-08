@@ -1,0 +1,209 @@
+@charset "UTF-8";
+
+form {
+    
+}
+
+input {
+     border-radius: 5px 5px 5px 5px;
+     border: 2px solid #81C6D4;
+     margin-bottom: 5px;
+}
+
+textarea {
+     border-radius: 5px 5px 5px 5px;
+     border: 2px solid #81C6D4;
+     margin-bottom: 5px;
+     margin-right: 11px;
+}
+
+input.clear {
+     background: none repeat scroll 0% 0% transparent;
+     border: medium none;
+     margin: 0pt;
+     padding: 0pt;
+     vertical-align: middle;
+}
+
+select {
+     border-radius: 5px 5px 5px 5px;
+     border: 2px solid #81C6D4;
+     margin-bottom: 5px;
+     margin-top: 1px;
+}
+
+.type-button {
+     border: 2px solid #7F7F7F;
+     height: 25px;
+}
+
+input.header-search-button {
+     border: 0px none;
+     float: left;
+     left: 5px;
+     position: relative;
+}
+
+input.header-search-field {
+     background: url("../images/search_field.gif") repeat scroll left top transparent;
+     border: 0px none;
+     font-size: 12px;
+     font-weight: normal;
+     height: 24px;
+     padding-left: 10px;
+     width: 65px;
+}
+
+.form-style {
+     height: 250px;
+     margin-left: 14px;
+     margin-top: 16px;
+     position: relative;
+     width: 350px;
+}
+
+.position-attachment {
+     margin-left: 25px;
+     position: relative;
+}
+
+input.error {
+     background: none repeat scroll 0% 0% #B5CEE2;
+}
+
+label.error {
+     color: red;
+     font-weight: bold;
+}
+
+input.campo_de_texto, textarea.campo_de_texto {
+     width: 98%;
+}
+
+input.fecha, select.fecha {
+     width: 100px ! important;
+}
+
+file {
+    
+}
+
+.form_stuff {
+     margin: 10px;
+     width: 515px;
+}
+
+.form_project {
+     margin: 10px;
+     width: 515px;
+}
+
+.form_reference {
+     margin: 10px;
+     width: 515px;
+}
+
+.form_folder {
+     margin: 10px;
+     width: 515px;
+}
+
+.form_criteria {
+     margin: 10px;
+     width: 315px;
+}
+
+.form_saved_search {
+     margin: 10px;
+     width: 315px;
+}
+
+.form_no_actionable {
+     margin: 10px;
+     width: 600px;
+}
+
+.form_someday_maybe {
+     margin-left: 10px;
+     margin-right: 10px;
+     margin-top: 10px;
+     width: 600px;
+}
+
+#form_import_stuff {
+     margin: 10px;
+     width: 600px;
+}
+
+#criteria_form {
+     margin: 10px auto;
+     width: 85%;
+}
+
+#criteria_form select {
+     width: 100%;
+}
+
+#criteria_form .etiqueta {
+     padding-top: 5px;
+}
+
+#login_form {
+     margin: 10px auto;
+     width: 320px;
+}
+
+#search-fields {
+     margin-bottom: 10px;
+     margin-top: 10px;
+     width: 80%;
+}
+
+.form_settings {
+     margin: 10px 10px 40px;
+     width: 500px;
+}
+
+#clarify-content {
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 0px;
+     text-align: center;
+     width: 90%;
+}
+
+#clarify-content #form_clarify {
+     margin-top: 10px ! important;
+}
+
+#clarify-content #form_clarify, #clarify-content .form_no_actionable, #clarify-content .form_actionable {
+     left: -50px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 0px;
+     position: relative;
+     width: 800px;
+}
+
+div.valor input#done_checkbox {
+     margin-top: 5px ! important;
+}
+
+div.boton input {
+     background: url("../images/boton.gif") no-repeat scroll left center transparent;
+     border: medium none;
+     color: #FFFFFF;
+     cursor: pointer;
+     font-size: 16px;
+     font-weight: bold;
+     height: 30px;
+     margin: 0px 0px 10px 0px;
+     padding: 0px;
+     width: 100px;
+}
+
+div.boton input:hover {
+     background: url("../images/boton-hover.gif") no-repeat scroll left center transparent;
+     cursor: pointer;
+}
+

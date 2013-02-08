@@ -1,0 +1,83 @@
+#focus a:link, #focus a:active, #focus a:visited {
+     color: #666666 ! important;
+     font-size: 15px ! important;
+     font-weight: normal ! important;
+     padding-right: 10px ! important;
+     text-decoration: none;
+}
+
+#focus a:hover {
+     color: #00ABCF ! important;
+}
+
+#focus ul {
+     margin-bottom: 20px;
+     margin-top: 5px;
+}
+
+#focus ul li {
+     border-right: 1px solid #E6F1F3;
+}
+
+
+#focus .saved_search_menu {
+   border: 1px solid #E6F1F3;
+   overflow:hidden;
+}
+
+#focus .saved_search_menu #saved_search_menu_msdd {
+   width: 95% !important;   
+   padding:5px;
+   overflow:hidden;
+}
+
+
+#focus ul li a.first {
+     border-top: 1px solid #E6F1F3;
+}
+
+#focus ul li a {
+     border-bottom: 1px solid #E6F1F3;
+     display: block;
+     padding-bottom: 15px;
+     padding-left: 50px;
+     padding-right: 10px ! important;
+     padding-top: 15px;
+}
+
+#focus ul li a:hover {
+     background-color: #F1F6F9 ! important;
+}
+
+#focus ul li a.today {
+     background: url("../images/icons/navigation/today.png") no-repeat scroll 10px center transparent;
+}
+
+#focus ul li a.scheduled {
+     background: url("../images/icons/navigation/scheduled.png") no-repeat scroll 10px center transparent;
+}
+
+#focus ul li a.delegated {
+     background: url("../images/icons/navigation/delegated.png") no-repeat scroll 10px center transparent;
+}
+
+#focus ul li a.next_actions {
+     background: url("../images/icons/navigation/next_actions.png") no-repeat scroll 10px center transparent;
+}
+
+#focus ul li a.saved_search {
+     background: url("../images/icons/navigation/saved_search.png") no-repeat scroll 10px center transparent;
+}
+
+#focus ul li a.selected {
+     background-color: #E6F1F3 ! important;
+}
+
+#focus ul li a.focus_project {
+     background: url("../images/icons/navigation/projects.png") no-repeat scroll 10px center transparent;
+}
+
+#focus ul li a.add {
+     background: url("../images/icons/navigation/dot-green.gif") no-repeat scroll 10px center transparent;
+}
+

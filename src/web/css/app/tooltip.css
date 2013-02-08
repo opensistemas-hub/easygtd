@@ -1,0 +1,278 @@
+.mktipmsg {
+  padding: 5px;
+  background-color: #FFFFFF;
+  border: 1px solid #c8c3c3;
+  width:180px;font-family: Arial, Helvetica, sans-serif; 
+  font-size: 12px; color: #6b6b6b;
+  display:none; 
+  position:absolute;
+  left:0px;
+  top:0px;
+}
+
+/*boton new criteria -> _criteria_list*/
+.button_new_criteria{
+  position:absolute;
+  margin-left: 920px;
+  margin-top: 40px;
+  width:180px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.title{
+  position:absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:  bolder;
+  margin-top: 6px;
+  margin-left: 35px;
+  font-size: 20px;
+}
+
+.title_stuff_name, .title_stuff_description, .title_stuff_attachments {
+  position:absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:  bolder;
+  margin-top: 50px;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.title_stuff_description{
+  margin-top: 100px;
+}
+
+.title_stuff_attachments{
+   margin-top: 150px;
+}
+
+.stuff_name, .stuff_description, .stuff_attachments{
+  position:absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:  bolder;
+  margin-top: 70px;
+  margin-left: 10px;
+  font-size: 12px;
+  font-style:  italic;
+  text-indent: 25px;
+}
+
+.stuff_description{
+  margin-top: 120px;
+}
+
+.img_txt{
+  position:absolute;
+  margin-left: 10px;
+  margin-top: 170px;
+  text-indent: 35px;
+}
+
+.stuff_attachments{
+  margin-top: 208px;
+}
+
+.done{
+  position:absolute;
+  margin-left: 130px;
+  margin-top: -26px;
+}
+
+.text_done{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  font-style:  bold;
+  position:absolute;
+  margin-left: -20px;
+  margin-top: 20px;
+  width: 60px;
+/*  border: 1px solid #CCC;*/
+  text-align: center;
+}
+
+.delete{
+  position:absolute;
+  margin-left: 190px;
+  margin-top: -26px;
+}
+
+.text_delete{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  font-style:  bold;
+  position:absolute;
+  margin-left: -15px;
+  margin-top: 0px;
+  width: 60px;
+/*  border: 1px solid #CCC;*/
+  text-align: center
+}
+
+.contenedor_attachment{
+  position:absolute;
+  margin-left: 15px;
+  margin-top: 160px;
+  text-align:left;
+}
+
+.titulo_attachment{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  position:absolute;
+  margin-left: 0px;
+  margin-top: -10px;
+}
+
+.attachment_doing{
+  position:absolute;
+  margin-left: 180px;
+  margin-top: -10px;
+
+}
+
+.nextActionCriteria{
+  position:absolute;
+  margin-left: 80px;
+  margin-top: -20px;
+  width: 250px;
+  height:400px;
+  border: 1px solid #CCC;
+
+}
+
+.criteria_1{
+  position:absolute;
+  margin-left: 80px;
+  margin-top: -20px;
+  width: 250px;
+  height:400px;
+  border: 1px solid #CCC;
+
+}
+.criteria_2{
+   position:absolute;
+  margin-left: 80px;
+  margin-top: -20px;
+  width: 250px;
+  height:400px;
+  border: 1px solid #CCC;
+
+}
+.criteria_3{
+   position:absolute;
+  margin-left: 80px;
+  margin-top: -20px;
+  width: 250px;
+  height:400px;
+  border: 1px solid #CCC;
+
+}
+
+.criteria_4{
+   position:absolute;
+  margin-left: 80px;
+  margin-top: -20px;
+  width: 250px;
+  height:400px;
+  border: 1px solid #CCC;
+
+}
+.criteria_5{
+   position:absolute;
+  margin-left: 80px;
+  margin-top: -20px;
+  width: 250px;
+  height:400px;
+  border: 1px solid #CCC;
+
+}
+
+.criteria_1{
+  position:absolute;
+  margin-left: 80px;
+  margin-top: -20px;
+  width: 250px;
+  height:400px;
+  border: 1px solid #CCC;
+
+}
+.criteria_2{
+   position:absolute;
+  margin-left: 80px;
+  margin-top: -20px;
+  width: 250px;
+  height:400px;
+  border: 1px solid #CCC;
+
+}
+.criteria_3{
+   position:absolute;
+  margin-left: 80px;
+  margin-top: -20px;
+  width: 250px;
+  height:400px;
+  border: 1px solid #CCC;
+
+}
+
+.criteria_4{
+   position:absolute;
+  margin-left: 80px;
+  margin-top: -20px;
+  width: 250px;
+  height:400px;
+  border: 1px solid #CCC;
+
+}
+.criteria_5{
+   position:absolute;
+  margin-left: 80px;
+  margin-top: -20px;
+  width: 250px;
+  height:400px;
+  border: 1px solid #CCC;
+
+}
+
+
+.li_criteria{
+  height:26px;
+  text-align: justify;
+  margin-top: -10px;
+  margin-left: 0px;
+
+}
+
+.content_no_actionable{
+  position:absolute;
+  margin-top: 6px;
+  margin-left: 35px;
+  border-color:  #6b6b6b;
+
+}
+
+.title1{
+  position:absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:  bolder;
+  margin-top: 6px;
+  margin-left: 35px;
+  font-size: 20px;
+  height:20px;
+   width: 400px;
+/*border: 1px solid #CCC;*/
+}
+.form-style2 {
+  position:absolute;
+  height: 80px;
+  width: 80px;
+  position: relative;
+  margin-left: 14px;
+  margin-top: 16px;
+
+}
+.details_folder{
+
+  margin-top: 16px;
+
+
+}

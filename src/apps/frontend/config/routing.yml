@@ -1,0 +1,159 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password }
+
+my_settings:
+  url: /:sf_culture/my_settings
+  param: {module: user_management, action:edit}
+  requirements:
+    sf_culture: (?:es|en)
+
+doing:
+  url: /:sf_culture/doing_work
+  param: {module: doing_work, action:index}
+  requirements:
+    sf_culture: (?:es|en)
+
+
+process:
+  url: /:sf_culture/clarify
+  param: {module: clarify_process, action:start}
+  requirements:
+    sf_culture: (?:es|en)
+
+process_success:
+  url: /:sf_culture/process_success
+  param: {module: clarify_process, action:next}
+  requirements:
+    sf_culture: (?:es|en)
+
+edit_action:
+  url: /:sf_culture/clarify/edit_action/:type_action/:ref/:action_id
+  param: {module: clarify_process, action:edit_action}
+  requirements:
+    sf_culture: (?:es|en)
+
+inbox:
+  url: /:sf_culture/inbox/capture
+  param: {module: stuff_management, action:new}
+  requirements:
+    sf_culture: (?:es|en)
+
+my_inbox:
+  url: /:sf_culture/inbox
+  param: {module: stuff_management, action:index}
+  requirements:
+    sf_culture: (?:es|en)
+
+inbox_import:
+  url: /:sf_culture/inbox/import
+  param: {module: stuff_management, action:import}
+  requirements:
+    sf_culture: (?:es|en)
+
+inbox_show:
+  url: /:sf_culture/inbox/show/:id
+  param: {module: stuff_management, action:show}
+  requirements:
+    sf_culture: (?:es|en)
+
+action_show:
+  url: /:sf_culture/action/:created_at/:action_id
+  param: {module: doing_work, action:show}
+  requirements:
+    sf_culture: (?:es|en)
+
+show_stuff:
+  url: /:sf_culture/stuffs/:stuff_normalized_name
+  param: {module: stuff_management, action:show_url}
+  requirements:
+    sf_culture: (?:es|en)
+       
+project:
+  url: /:sf_culture/organize
+  param: {module: project_management, action:index}
+  requirements:
+    sf_culture: (?:es|en)    
+    
+wizard_project:
+  url: /:sf_culture/wizard_project
+  param: {module: project_management, action:natural_planning}
+  requirements:
+    sf_culture: (?:es|en)     
+
+references:
+  url: /:sf_culture/references
+  param: {module: no_actionable_item_management, action:reference}
+  requirements:
+    sf_culture: (?:es|en)
+    
+somedaymaybe:
+  url: /:sf_culture/someday
+  param: {module: no_actionable_item_management, action:some_day_maybe}
+  requirements:
+    sf_culture: (?:es|en)    
+
+my_calendar:
+  url: /ical/:hash_calendar
+  param: {module: calendar, action:export}
+
+show_project:
+  url: /:sf_culture/projects/:created_at/:project_id
+  param: {module: project_management, action:show_url}
+  requirements:
+    sf_culture: (?:es|en)
+
+static_file:
+  url: /:sf_culture/html/:file
+  param: { module: home, action:static_content}
+  requirements:
+    sf_culture: (?:es|en)   
+    file: (?:import_csv.txt)
+
+download_stuff_attachment:
+  url: /:sf_culture/attachments/stuff/:stuff_attachment_id
+  param: { module: clarify_process, action: download_attachment}
+  requirements:
+    sf_culture: (?:es|en)   
+
+download_next_action_attachment:
+  url: /:sf_culture/attachments/next_action/:next_action_attachment_id
+  param: { module: clarify_process, action: download_attachment}
+  requirements:
+    sf_culture: (?:es|en) 
+
+homepage:
+  url:   /
+  param: { module: home, action: index }
+  requirements:
+    sf_culture: (?:es|en)
+
+localized_homepage:
+  url: /:sf_culture/
+  param: { module: home, action: account }
+  requirements:
+    sf_culture: (?:es|en)
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:sf_culture/:module
+  param: { action: index }
+  requirements:
+    sf_culture: (?:es|en)
+
+default:
+  url:   /:sf_culture/:module/:action/*
+  requirements:
+    sf_culture: (?:es|en)

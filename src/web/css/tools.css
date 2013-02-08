@@ -1,0 +1,143 @@
+.jnotify-container {
+     left: 0pt;
+     position: fixed;
+     top: 0pt;
+     width: 100%;
+     z-index: 100000;
+}
+
+.jnotify-container .jnotify-notification {
+     position: relative;
+}
+
+.jnotify-container .jnotify-notification .jnotify-background {
+     background-color: #E3F0DB;
+     height: 100%;
+     left: 0pt;
+     opacity: 0.9;
+     position: absolute;
+     top: 0pt;
+     width: 100%;
+     z-index: 1;
+}
+
+.jnotify-container .jnotify-notification a.jnotify-close, .jnotify-container .jnotify-notification a.jnotify-close:link, .jnotify-container .jnotify-notification a.jnotify-close:visited, .jnotify-container .jnotify-notification a.jnotify-close:focus, .jnotify-container .jnotify-notification a.jnotify-close:hover {
+     color: #567B1B;
+     cursor: pointer;
+     font: bold 1.4em/1em Arial,Helvetica,sans-serif;
+     padding: 0pt 5px;
+     position: absolute;
+     right: 5px;
+     text-decoration: none;
+     top: 2px;
+     z-index: 3;
+}
+
+.jnotify-container .jnotify-notification .jnotify-message {
+     color: #567B1B;
+     font: bold 1.4em/1.2em Arial,Helvetica,sans-serif;
+     padding: 20px;
+     position: relative;
+     text-align: center;
+     z-index: 2;
+}
+
+.jnotify-container .jnotify-notification .jnotify-message * {
+     font-size: 1em;
+}
+
+.jnotify-container .jnotify-notification-error .jnotify-background {
+     background-color: #D79EAC;
+}
+
+.jnotify-container .jnotify-notification-error .jnotify-close, .jnotify-container .jnotify-notification-error .jnotify-message {
+     color: #A72947 ! important;
+}
+
+.jnotify-container .jnotify-notification-warning .jnotify-background {
+     background-color: #FFF7D1;
+}
+
+.jnotify-container .jnotify-notification-warning .jnotify-close, .jnotify-container .jnotify-notification-warning .jnotify-message {
+     color: #C2A928 ! important;
+}
+
+div.wait {
+     background: url("../images/icons/navigation/spinner.gif") no-repeat scroll center center transparent;
+     height: 500px;
+     margin-left: auto;
+     margin-right: auto;
+     width: 200px;
+}
+
+div.paginator {
+     margin-bottom: 10px;
+}
+
+div#panel-criterias {
+     border-bottom: 1px solid #C2C2C2;
+     margin-bottom: 10px;
+     padding: 5px;
+     width: 97%;
+}
+
+.steps {
+     height: auto;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 20px;
+     padding-bottom: 30px;
+     width: 740px;
+}
+
+.steps ul li {
+     float: left;
+     height: 150px;
+     margin-right: 20px;
+     text-align: center;
+     width: 220px;
+}
+
+.steps ul li a {
+     border: 4px outset #C2C2C2;
+     display: block;
+     font-size: 15px;
+     height: 90px;
+     padding: 30px 10px;
+     text-decoration: none;
+     width: 200px;
+}
+
+.steps ul li a:hover {
+    
+}
+
+div.tab_info ul {
+     width: 100%;
+}
+
+div.tab_info ul li {
+     display: block;
+     float: left;
+     font-size: 11px;
+     overflow: hidden;
+     padding-top: 3px;
+     width: 130px;
+}
+
+div.tab_info ul li img {
+     height: 18px;
+     position: relative;
+     top: -1px;
+     width: 18px;
+}
+
+div.tab_info ul.attachments li {
+     width: 260px;
+}
+
+span.name-action {
+     font-size: 13px;
+     font-weight: bold;
+}
+

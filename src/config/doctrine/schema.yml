@@ -1,0 +1,1084 @@
+
+      
+InviteAfriend:
+  tableName: invite_a_friend
+  columns:
+    id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    user_id:
+      type: integer(20)
+      notnull: true  
+    email:
+      type: varchar(50)
+      notnull: true
+    hash:
+      type: string(255)
+      notnull: true    
+    status:
+      type: integer(1)
+      notnull: true
+  actAs:
+    Timestampable:
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignAlias: InviteUsers
+
+################################################## COSA #########################################################
+Stuff:
+  tableName: stuff
+  columns:
+    id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    name:
+      type: varchar(255)
+      notnull: true
+    description:
+      type: text
+      notnull: false
+    user_id:
+      type: integer(20)
+      notnull: true
+    stuff_state_id:
+      type: integer(20)
+      notnull: true
+  actAs:
+    Timestampable:
+    Sluggable:
+      fields: [id,name]
+      name: normalized_name
+      type: string
+      length: 255
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignAlias: UserStuffs
+    StuffState:
+      local: stuff_state_id
+      foreign: id
+      type: one
+      foreignAlias: Stuffs
+#ESTADO
+StuffState:
+  tableName: stuff_state
+  columns:
+    id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    name:
+      type: varchar(50)
+      notnull: true
+
+#ARCHIVO ADJUNTO
+StuffAttachment:
+  tableName: stuff_attachment
+  columns:
+    id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    value:
+      type: varchar(255)
+      notnull: true
+    stuff_id:
+      type: integer(20)
+      notnull: true
+  actAs:
+    Timestampable:
+    Sluggable:
+      fields: [value]
+      name: normalized_value
+      type: string
+      length: 255
+  relations:
+    Stuff:
+      local: stuff_id
+      foreign: id
+      type: one
+      foreignAlias: StuffAttachments 
+      onDelete: CASCADE         
+
+########################################### ESTADO DE LAS SIGUIENTES ACCIONES ########################################
+
+NextActionState:
+  tableName: next_action_state
+  columns:
+    name:
+      type: varchar(50)
+      notnull: true
+    type:
+      type: varchar(30)
+      notnull: true
+
+
+# ESTADO: POR HACERSE
+ToDo:
+ inheritance:
+    extends: NextActionState
+    type: simple
+    keyField: type
+    keyValue: TO_DO
+
+#ESTADO: HECHO
+Done:
+ inheritance:
+    extends: NextActionState
+    type: simple
+    keyField: type
+    keyValue: DONE
+
+#ESTADO: NOTIFICADO A LA PERSONA RESPONSABLE
+Notificated:
+ inheritance:
+    extends: NextActionState
+    type: simple
+    keyField: type
+    keyValue: NOTIFICATED
+
+#ESTADO: ENTREGADO
+Delivered:
+ inheritance:
+    extends: NextActionState
+    type: simple
+    keyField: type
+    keyValue: DELIVERED
+
+
+
+############################################## COSAS POR HACER ######################################33
+NextAction:
+  tableName: next_action
+  columns:
+    name:
+      type: varchar(255)
+      notnull: true
+    description:
+      type: text
+      notnull: false
+    next_action_state_id:
+      type: integer(20)
+      notnull: true
+    user_id:
+      type: integer(20)
+      notnull: true
+    type:
+      type: varchar(30)
+      notnull: true
+    hash:
+      type: varchar(30)
+      notnull: true
+    original:
+      type: integer(1)
+      notnull: true    
+  actAs:
+    Timestampable:
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignAlias: UserNextActions
+    NextActionState:
+      local: next_action_state_id
+      foreign: id
+      type: one
+      foreignAlias: NextActions
+
+DoItNow:
+ inheritance:
+    extends: NextAction
+    type: simple
+    keyField: type
+    keyValue: DO_IT_NOW
+
+# HACER A PENAS SE PUEDA
+DoASAP:
+ inheritance:
+    extends: NextAction
+    type: simple
+    keyField: type
+    keyValue: DO_ASAP
+
+Delegated:
+ inheritance:
+    extends: NextAction
+    type: simple
+    keyField: type
+    keyValue: DELEGATED
+
+Scheduled:
+ inheritance:
+    extends: NextAction
+    type: simple
+    keyField: type
+    keyValue: SCHEDULED
+    
+NextActionAttachment:
+  tableName: next_action_attachment
+  columns:
+    id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    value:
+      type: varchar(255)
+      notnull: true
+    next_action_id:
+      type: integer(20)
+      notnull: true
+  actAs:
+    Timestampable:
+    Sluggable:
+      fields: [value]
+      name: normalized_value
+      type: string
+      length: 255
+  relations:
+    NextAction:
+      local: next_action_id
+      foreign: id
+      type: one
+      foreignAlias: NextActionAttachments
+      onDelete: CASCADE
+
+################################# TABLA DE PROPIEDADES DE ACCIONES ###########################
+NextActionInfo:
+  tableName: next_action_info
+  columns:
+    next_action_id:
+      type: integer(20)
+      notnull: true
+    value: 
+      type: string(120)
+    type:
+      type: varchar(30)
+      notnull: true
+  relations:
+    NextAction:
+      local: next_action_id
+      foreign: id
+      type: one
+      foreignAlias: Informations
+      onDelete: CASCADE
+
+DueDate:
+ inheritance:
+    extends: NextActionInfo
+    type: simple
+    keyField: type
+    keyValue: DUE_DATE
+
+DelegatedTo:
+ inheritance:
+    extends: NextActionInfo
+    type: simple
+    keyField: type
+    keyValue: DELEGATED_TO
+
+FollowUpDate:
+ inheritance:
+    extends: NextActionInfo
+    type: simple
+    keyField: type
+    keyValue: FOLLOW_UP_DATE
+
+FollowUpTime:
+ inheritance:
+    extends: NextActionInfo
+    type: simple
+    keyField: type
+    keyValue: FOLLOW_UP_TIME
+
+ToDoInDateStart:
+ inheritance:
+    extends: NextActionInfo
+    type: simple
+    keyField: type
+    keyValue: TO_DO_IN_DATE_START
+
+ToDoInDateEnd:
+ inheritance:
+    extends: NextActionInfo
+    type: simple
+    keyField: type
+    keyValue: TO_DO_IN_DATE_END
+
+ToDoInHourStart:
+ inheritance:
+    extends: NextActionInfo
+    type: simple
+    keyField: type
+    keyValue: TO_DO_IN_HOUR_START
+    
+ToDoInHourEnd:
+ inheritance:
+    extends: NextActionInfo
+    type: simple
+    keyField: type
+    keyValue: TO_DO_IN_HOUR_END
+
+############################################## SAVE SEARCH ######################################33
+SavedSearch:
+  tableName: saved_search
+  columns:
+    name:
+      type: string(60)
+      notnull: true
+    user_id:
+      type: integer(20)
+      notnull: true
+  actAs:
+    Timestampable:
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignAlias: UserSavedSearches
+
+################################# TABLA DE PROPIEDADES DE SAVE SEARCH ###########################
+SavedSearchInfo:
+  tableName: saved_search_info
+  columns:
+    saved_search_id:
+      type: integer(20)
+      notnull: true
+    value:
+      type: string(120)
+    type:
+      type: varchar(30)
+      notnull: true
+  relations:
+    SavedSearch:
+      local: saved_search_id
+      foreign: id
+      type: one
+      foreignAlias: Informations
+      onDelete: CASCADE
+
+TypeFocus:
+  inheritance:
+    extends: SavedSearchInfo
+    type: simple
+    keyField: type
+    keyValue: TYPE_FOCUS
+
+ProjectFocus:
+  inheritance:
+    extends: SavedSearchInfo
+    type: simple
+    keyField: type
+    keyValue: PROJECT_FOCUS
+
+ContextFocus:
+  inheritance:
+    extends: SavedSearchInfo
+    type: simple
+    keyField: type
+    keyValue: CONTEXT_FOCUS
+
+TimeFocus:
+  inheritance:
+    extends: SavedSearchInfo
+    type: simple
+    keyField: type
+    keyValue: TIME_FOCUS
+
+EnergyFocus:
+  inheritance:
+    extends: SavedSearchInfo
+    type: simple
+    keyField: type
+    keyValue: ENERGY_FOCUS
+
+PriorityFocus:
+  inheritance:
+    extends: SavedSearchInfo
+    type: simple
+    keyField: type
+    keyValue: PRIORITY_FOCUS
+
+DoneFocus:
+  inheritance:
+    extends: SavedSearchInfo
+    type: simple
+    keyField: type
+    keyValue: DONE_FOCUS
+
+DueTodayFocus: 
+  inheritance:
+    extends: SavedSearchInfo
+    type: simple
+    keyField: type
+    keyValue: DUE_TODAY_FOCUS
+    
+OnlyDateFocus:
+  inheritance:
+    extends: SavedSearchInfo
+    type: simple
+    keyField: type
+    keyValue: ONLY_DATE_FOCUS
+
+################################# TABLA DE PROPIEDADES DE LAS COSAS ###########################
+
+NextActionStuff:
+  tableName: next_action_stuff
+  columns:
+    stuff_id:
+      type: integer(20)
+      notnull: true
+    next_action_id:
+      type: integer(20)
+      notnull: true
+  actAs:
+    Timestampable:    
+  relations:
+    NextAction:
+      local: next_action_id
+      foreign: id
+      type: one
+      foreignAlias: RelatedStuffs
+      onDelete: CASCADE
+    Stuff:
+      local: stuff_id
+      foreign: id
+      type: one
+      foreignAlias: RelatedNextActions
+      onDelete: CASCADE
+
+
+#################################################### CRITERIOS #############################################
+Criteria:
+  tableName: criteria
+  columns:
+    value:
+      type: string(120)
+      notnull: true
+    unit:
+      type: string(50)
+      notnull: false
+    type:
+      type: string(30)
+      notnull: true
+    user_id:
+      type: integer(20)
+      notnull: true
+  relations:
+     sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignAlias: UserCriterias
+
+
+Context:
+ inheritance:
+    extends: Criteria
+    type: simple
+    keyField: type
+    keyValue: CONTEXT
+
+Energy:
+ inheritance:
+    extends: Criteria
+    type: simple
+    keyField: type
+    keyValue: ENERGY
+
+TimeAvailable:
+ inheritance:
+    extends: Criteria
+    type: simple
+    keyField: type
+    keyValue: TIME_AVAILABLE
+
+Priority:
+ inheritance:
+    extends: Criteria
+    type: simple
+    keyField: type
+    keyValue: PRIORITY
+
+NextActionCriteria:
+  tableName: next_action_criteria
+  columns:
+    id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    next_action_id:
+      type: integer(20)
+      notnull: true
+    criteria_id:
+      type: integer(20)
+      notnull: true
+  relations:
+     NextAction:
+      local: next_action_id
+      foreign: id
+      type: one
+      foreignAlias: NextActionCriterias
+      onDelete: CASCADE
+     Criteria:
+       local: criteria_id
+       foreign: id
+       type: one
+       foreignAlias: CriteriaNextActions
+       onDelete: CASCADE
+
+################################################ PROYECTO(agrupa acciones)    #####################################
+
+#ESTADO DE PROYECTO
+ProjectState:
+  tableName: project_state
+  columns:
+    id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    type:
+      type: varchar(50)
+      notnull: true
+
+ActualProject:
+ inheritance:
+    extends: ProjectState
+    type: simple
+    keyField: type
+    keyValue: ACTUAL_PROJECT
+    
+CompletedProject:
+ inheritance:
+    extends: ProjectState
+    type: simple
+    keyField: type
+    keyValue: COMPLETED_PROJECT
+    
+FutureProject:
+ inheritance:
+    extends: ProjectState
+    type: simple
+    keyField: type
+    keyValue: FUTURE_PROJECT
+
+
+#PROYECTO
+Project:
+  tableName: project
+  columns:
+    id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    name:
+      type: string(255)
+      notnull: true
+    description:
+      type: text
+      notnull: false
+    purpose:
+      type: text
+      notnull: false
+    vision:
+      type: text
+      notnull: false
+    brainstorming:
+      type: text
+      notnull: false
+    project_state_id:
+      type: integer(20)
+      notnull: true
+    user_id:
+      type: integer(20)
+      notnull: true
+  actAs:
+    Timestampable:  
+    Sluggable:
+      fields: [id,name]
+      name: normalized_name
+      type: string
+      length: 255
+  relations:
+     sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignAlias: UserProjects
+     ProjectState:
+      local: project_state_id
+      foreign: id
+      type: one
+      foreignAlias: StateProjects
+
+#ARCHIVO ADJUNTO PROYECTO
+ProjectAttachment:
+  tableName: project_attachment
+  columns:
+    id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    value:
+      type: varchar(255)
+      notnull: true
+    project_id:
+      type: integer(20)
+      notnull: true
+  actAs:
+    Timestampable:
+    Sluggable:
+      fields: [value]
+      name: normalized_value
+      type: string
+      length: 255
+  relations:
+    Project:
+      local: project_id
+      foreign: id
+      type: one
+      foreignAlias: ProjectAttachments
+      onDelete: CASCADE
+
+#
+ActionProject:
+  tableName: action_project
+  columns:
+    id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    project_id:
+      type: integer(20)
+      notnull: true
+  actAs:
+    Timestampable:    
+
+NextActionProject:
+  inheritance:
+    extends: ActionProject
+    type: concrete
+  columns:
+    next_action_id: integer(20)
+  relations:
+   NextAction:
+      local: next_action_id
+      foreign: id
+      type: one
+      foreignAlias: NextActionProjects
+      onDelete: CASCADE
+   Project:
+      local: project_id
+      foreign: id
+      type: one
+      foreignAlias: ProjectActions
+      onDelete: CASCADE
+   
+NoActionableItemProject:
+  inheritance:
+    extends: ActionProject
+    type: concrete
+  columns:
+    no_actionable_item_id: integer(20)
+  relations:
+   NoActionableItem:
+      local: no_actionable_item_id
+      foreign: id
+      type: one
+      foreignAlias: NoActionableItemProjects
+      onDelete: CASCADE    
+   Project:
+      local: project_id
+      foreign: id
+      type: one
+      foreignAlias: ProjectNoActionableActions
+      onDelete: CASCADE
+
+ ###############################################                #################################################
+NoActionableItem:
+  tableName: no_actionable_item
+  columns:
+    name:
+      type: varchar(255)
+      notnull: true
+    description:
+      type: text
+      notnull: false
+    type:
+      type: string(30)
+      notnull: true
+    user_id:
+      type: integer(20)
+      notnull: true
+  actAs:
+    Timestampable:
+    Sluggable:
+      fields: [name]
+      name: normalized_name
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignAlias: UserNoActionableItems
+
+# ALGUN DÍA
+SomeDayMaybe:
+ inheritance:
+    extends: NoActionableItem
+    type: simple
+    keyField: type
+    keyValue: SOME_DAY_MAYBE
+
+#REFERENCIA
+Reference:
+ inheritance:
+    extends: NoActionableItem
+    type: simple
+    keyField: type
+    keyValue: REFERENCE
+
+
+#################################################            ##########################################
+
+NoActionableItemInfo:
+  tableName: no_actionable_item_info
+  columns:
+    no_actionable_item_id:
+      type: int(20)
+      notnull: true
+    value:
+      type: string(120)
+    type:
+      type: string(30)
+      notnull: true
+  relations:
+    NoActionableItem:
+      local: no_actionable_item_id
+      foreign: id
+      type: one
+      foreignAlias: Informations
+      onDelete: CASCADE
+
+#######################################################          ############################################
+
+TicklerDate:
+ inheritance:
+    extends: NoActionableItemInfo
+    type: simple
+    keyField: type
+    keyValue: TICKLER_DATE
+
+#
+Folder:
+  tableName: folder
+  columns:
+    id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    name:
+      type: string(255)
+      notnull: true
+    user_id:
+      type: integer(20)
+      notnull: true  
+  actAs:
+    Timestampable:
+    Sluggable:
+      fields: [id,name]
+      name: normalized_name
+      type: string
+      length: 255
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignAlias: UserFolders  
+
+#
+NoActionableItemFolder:
+  tableName: no_actionable_item_folder
+  columns:
+    id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    no_actionable_item_id:
+      type: integer(20)
+      notnull: true
+    folder_id:
+      type: integer(20)
+      notnull: true
+  relations:
+    NoActionableItem:
+      local: no_actionable_item_id
+      foreign: id
+      type: one
+      foreignAlias: NoActionableItemFolders
+      onDelete: CASCADE
+    Folder:
+      local: folder_id
+      foreign: id
+      type: one
+      foreignAlias: FolderNoActionables
+      onDelete: CASCADE               
+
+#
+NoActionableItemAttachment:
+  tableName: no_actionable_item_attachment
+  columns:
+    id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    value:
+      type: varchar(255)
+      notnull: true
+    no_actionable_item_id:
+      type: integer(20)
+      notnull: true
+  actAs:
+    Timestampable:
+    Sluggable:
+      fields: [value]
+      name: normalized_value
+      type: string
+      length: 255
+  relations:
+    NoActionableItem:
+      local: no_actionable_item_id
+      foreign: id
+      type: one
+      foreignAlias: NoActionableItemAttachments
+      onDelete: CASCADE
+
+#
+IndexSearch:
+  tableName: index_search
+  columns:
+    id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    item_id:
+      type: varchar(255)
+      notnull: true
+    user_id:
+      type: integer(20)
+      notnull: true      
+    type:
+      type: varchar(255)
+      notnull: true
+    value:
+      type: varchar(255)
+      notnull: true  
+  actAs:
+    Timestampable:
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignAlias: Users
+      onDelete: CASCADE
+
+#
+ProjectIndexSearch:
+ inheritance:
+    extends: IndexSearch
+    type: simple
+    keyField: type
+    keyValue: PROJECTS
+
+#
+NextActionIndexSearch:
+ inheritance:
+    extends: IndexSearch
+    type: simple
+    keyField: type
+    keyValue: NEXT_ACTIONS
+    
+StuffIndexSearch:
+ inheritance:
+    extends: IndexSearch
+    type: simple
+    keyField: type
+    keyValue: STUFFS
+    
+SomeDayIndexSearch:
+ inheritance:
+    extends: IndexSearch
+    type: simple
+    keyField: type
+    keyValue: SOMEDAYS
+    
+ReferenceIndexSearch:
+ inheritance:
+    extends: IndexSearch
+    type: simple
+    keyField: type
+    keyValue: REFERENCES
+
+
+######################################################  ITEMS  ################################################
+AlertConfiguration:
+  tableName: alert_configuration
+  columns:
+    id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    value:
+      type: varchar(255)
+      notnull: true  
+    type:
+      type: varchar(255)
+      notnull: true
+    user_id:
+      type: integer(20)
+      notnull: true      
+  actAs:
+    Timestampable:
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignAlias: Users
+      onDelete: CASCADE
+
+EmailItemAlertConfiguration:
+ inheritance:
+    extends: AlertConfiguration
+    type: simple
+    keyField: type
+    keyValue: EMAIL_ITEM
+
+ScheludedItemAlertConfiguration:
+ inheritance:
+    extends: AlertConfiguration
+    type: simple
+    keyField: type
+    keyValue: SCHELUDED_ITEM
+
+DelegateItemAlertConfiguration:
+ inheritance:
+    extends: AlertConfiguration
+    type: simple
+    keyField: type
+    keyValue: DELEGATE_ITEM
+    
+DoAsapItemAlertConfiguration:
+ inheritance:
+    extends: AlertConfiguration
+    type: simple
+    keyField: type
+    keyValue: DO_ASAP_ITEM    
+
+SomeDayMaybeItemAlertConfiguration:
+ inheritance:
+    extends: AlertConfiguration
+    type: simple
+    keyField: type
+    keyValue: SOME_DAY_MAYBE_ITEM    
+
+DayScheludedItemAlertConfiguration:
+ inheritance:
+    extends: AlertConfiguration
+    type: simple
+    keyField: type
+    keyValue: DAY_SCHELUDED_ITEM
+
+#####################################################  MARK ? #######################################################
+Bookmark:
+  tableName: bookmark
+  columns:
+    id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    item_id:
+      type: varchar(255)
+      notnull: true
+    user_id:
+      type: integer(20)
+      notnull: true
+    value:
+      type: varchar(255)
+      notnull: true          
+    type:
+      type: varchar(255)
+      notnull: true
+  actAs:
+    Timestampable:
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignAlias: Users
+      onDelete: CASCADE
+
+ProjectsMark:
+ inheritance:
+    extends: Bookmark
+    type: simple
+    keyField: type
+    keyValue: PROJECTS_MARK
+    
+NextActionsMark:
+ inheritance:
+    extends: Bookmark
+    type: simple
+    keyField: type
+    keyValue: NEXT_ACTIONS_MARK
+    
+StuffsMark:
+ inheritance:
+    extends: Bookmark
+    type: simple
+    keyField: type
+    keyValue: STUFFS_MARK
+    
+SomeDaysMark:
+ inheritance:
+    extends: Bookmark
+    type: simple
+    keyField: type
+    keyValue: SOME_DAYS_MARK
+    
+ReferencesMark:
+ inheritance:
+    extends: Bookmark
+    type: simple
+    keyField: type
+    keyValue: REFERENCES_MARK    
+
+EmailToInbox:
+  tableName: email_to_inbox
+  columns:
+    value:
+      type: varchar(255)
+      notnull: false     
+    user_id:
+      type: integer(20)
+      notnull: true      
+  actAs:
+    Timestampable:
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignAlias: EmailsToInbox
+      onDelete: CASCADE

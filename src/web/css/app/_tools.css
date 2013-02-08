@@ -1,0 +1,132 @@
+/* begin css tabs */
+
+ul#tabs { /* general settings */
+  text-align: left; /* set to left, right or center */
+  margin: 1em 0 1em 0; /* set margins as desired */
+  font: bold 11px; /* set font as desired */
+  border-bottom: 1px solid #fe5800; /* set border COLOR as desired */
+  list-style-type: none;
+  padding: 3px 10px 3px 10px; /* THIRD number must change with respect to padding-top (X) below */ 
+  margin-bottom:0px;
+}
+
+ul#tabs li { /* do not change */
+  display: inline;
+}
+
+ul#tabs li.selected { /* settings for selected tab */
+  border-bottom: 1px solid #fff; /* set border color to page background color */
+  background-color: #fff; /* set background color to match above border color */
+}
+
+ul#tabs li.selected a { /* settings for selected tab link */
+  background-color: #fff; /* set selected tab background color as desired */
+  color: #000; /* set selected tab link color as desired */
+  position: relative;
+  top: 1px;
+  padding-top: 4px; /* must change with respect to padding (X) above and below */
+}
+
+ul#tabs li a { /* settings for all tab links */
+  padding: 4px 4px; /* set padding (tab size) as desired; FIRST number must change with respect to padding-top (X) above */
+  border: 1px solid #fe5800; /* set border COLOR as desired; usually matches border color specified in #tabs */
+  background-color: #fe5800; /* set unselected tab background color as desired */
+  color: #666; /* set unselected tab link color as desired */
+  margin-right: 0px; /* set additional spacing between tabs as desired */
+  text-decoration: none;
+  border-bottom: none;
+}
+
+ul#tabs a:hover { /* settings for hover effect */
+  background: #fff; /* set desired hover color */
+}
+
+/* end css tabs */
+
+div#actions {
+  border-left:1px solid #fe5800;
+  border-right:1px solid #fe5800;
+  border-bottom:1px solid #fe5800;
+  padding:10px;
+}
+
+span.project_title {
+  padding-left:5px;
+  padding-right:5px;
+  position:relative;
+  top:8px;
+  background-color:#ffffff;
+  left:10px;
+  font-size:14px;
+}
+
+
+div.project_actions {
+  border:1px solid #999999;
+  padding:10px;
+}
+
+
+div.action_informations {
+  float:right;
+  width: 450px;
+}
+
+div.action_informations div {
+  height: 20px;
+  padding-left:30px;
+  padding-top:5px;
+  float:left;
+}
+
+div.action_informations div.due_date {
+  width: 65px;
+  background: url(../images/office-calendar.png) 2px 2px no-repeat;
+}
+
+div.action_informations div.due_time {
+  width: 35px;
+  background: url(../images/appointment-new.png) 2px 2px no-repeat;
+}
+
+div.action_informations div.delegated_to {
+  width: 150px;
+  overflow:hidden;
+  background: url(../images/system-users.png) 2px 2px no-repeat;
+}
+
+p.scheduled {
+  width: 22px;
+  height: 22px;
+  float:left;
+  margin:0px;
+  padding:0px;
+  background: url(../images/x-office-calendar.png);
+}
+
+p.delegated {
+  width: 22px;
+  height: 22px;
+  float:left;
+  margin:0px;
+  padding:0px;
+  background: url(../images/applications-development.png);
+}
+
+p.do_asap {
+  width: 22px;
+  height: 22px;
+  float:left;
+  margin:0px;
+  padding:0px;
+  background: url(../images/start-here.png);
+}
+
+
+
+
+
+
+
+
+

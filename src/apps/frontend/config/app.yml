@@ -1,0 +1,112 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  accepted:
+    languages: [en, es]
+  sf_guard_plugin:
+      algorithm_callable: sha1
+      remember_cookie_name:         easygtd
+      remember_key_expiration_age:  2592000   # 30 dias en segundos
+      success_signout_url:          homepage # Donde se redirigira al momento del logout
+      #check_password_callable: [WordpressS2Member, checkPassword]
+      check_password_callable: [checkPassword]
+      #wordpress_server: localhost
+      #wordpress_user: XXXXX
+      #wordpress_password: TTTTT
+      #wordpress_database: VCVCBCVC
+  .general:
+    SERVER_EMAIL: mail3.opensistemas.com //url del servidor al cual se conectara para enviar correos
+    PORT_EMAIL: 465 //puerto del servidor al cual se conectara para enviar correos
+    ENCRYPT_EMAIL: tls //tipo de seguridad del servidor al cual se conectara para enviar correos
+    EMAIL_EMAIL: xxx@opensistemas.com //usuario del servidor al cual se conectara para enviar correos
+    PASS_EMAIL: yyy //clave del usuario del servidor al cual se conectara para enviar correos
+    PAGE_SIZE_INBOX: 20
+    PAGE_SIZE_CRITERIA: 20 //paginador maximo en criterios
+    PAGE_SIZE_FOLDER: 20
+    PAGE_SIZE_PROJECT: 40
+    PAGE_SIZE_NOACTIONABLE_ITEM: 20 //paginador maximo en no_actionable_item
+    PAGE_SIZE_NEXT_ACTION: 20 //paginador maximo en acciones
+    FILE_WEIGHT: 2000000
+    TYPE_OF_FILES:
+          0: image/gif
+          1: text/css
+          2: image/png
+          3: image/jpeg
+          4: text/plain
+          5: application/pdf
+          6: application/zip
+          7.oasis.opendocument.text: application/vnd.oasis.opendocument.text
+          8: application/rtf
+          9: multipart/x-gzip
+          10: application/msword
+          11: text/xml
+          12: application/vnd.ms-powerpoint
+          13: application/vnd.ms-project
+          14: application/x-shockwave-flash
+          15: text/richtext
+          16: application/octet-stream
+          17: application/vnd.ms-excel
+          18: application/excel
+          19: image/bmp
+          20: text/html
+    app_doctrine_tree_rename_url default: sfDoctrineTree/rename
+    app_doctrine_tree_delete_url default: sfDoctrineTree/delete
+    app_doctrine_tree_add_child_url default: sfDoctrineTree/add_child
+    app_doctrine_tree_save_tree_url default: sfDoctrineTree/save_tree
+    CRITERIAS_TIME: 
+          0:  2 m
+          1:  5 m
+          2:  15 m
+          3:  30 m
+          4:  1 h
+          5:  2 h
+    CRITERIAS_ENERGY_EN:
+          0:  High
+          1:  Medium
+          2:  Low
+    CRITERIAS_PRIORITY_EN:
+          0:  Must
+          1:  Should
+          2:  Could
+    CRITERIAS_CONTEXT_EN:
+          0:  Home
+          1:  Computer
+          2:  Buy
+          3:  Speak with someone
+          4:  E-Mail
+          5:  Phone
+          6:  Think / Plan
+    CRITERIAS_ENERGY_ES:
+          0:  Alta
+          1:  Media
+          2:  Baja
+    CRITERIAS_PRIORITY_ES:
+          0:  Tengo
+          1:  Debería
+          2:  Podría
+    CRITERIAS_CONTEXT_ES:
+          0:  Casa
+          1:  Ordenador
+          2:  Comprar
+          3:  Hablar con alguien
+          4:  E-Mail
+          5:  Llamadas
+          6:  Pensar / Planificar
+    LIMIT_TO_INVITATIONS: 10 #limite de invitaciones para enviar
+    INVITE_SYSTEM: true #if true, the system is active and only invited users can register invitations 
+    URL_HOST: http://www.easygtd.com # URL FOR INVITATION
+    RECURRENT_PERIOD_TIME: 2Years #in case of days repeat just 2 years all events // ver strtime php
+    RECURRENT_PERIOD_TIME_ON_PERIOD_LAPSUS: 5Years #in case of weeks,months or years repeat 5 years // ver strtime php   
+  .array:
+    FORMAT_DATE:
+          'dd/MM/yy': "25/02/11"
+          'dd/MM/yyyy': "25/02/2011"
+          'dd-MM-yy': "25-02-11"
+          'dd-MM-yyyy': "25-02-2011"       
+          'yy/MM/dd': "11/02/25"
+          'yyyy/MM/dd': "2011/02/25"
+          'yy-MM-dd': "11-02-25"
+          'yyyy-MM-dd': "2011-02-25"
+

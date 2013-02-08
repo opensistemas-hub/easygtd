@@ -1,0 +1,95 @@
+.dd {
+     background-color: #FFFFFF;
+     display: inline-block ! important;
+     font-family: Arial,Helvetica,sans-serif;
+     font-size: 12px;
+     text-align: left;
+}
+
+.dd .ddTitle {
+     background: none repeat scroll 0% 0% #F2F2F2;
+     border: 1px solid #C3C3C3;
+     cursor: default;
+     height: 16px;
+     overflow: hidden;
+     padding: 3px;
+     text-indent: 0pt;
+}
+
+.dd .ddTitle span.arrow {
+     background: url("../../images/app/dd_arrow.gif") no-repeat scroll 0pt 0pt transparent;
+     cursor: pointer;
+     display: inline-block;
+     float: right;
+     height: 16px;
+     width: 16px;
+}
+
+.dd .ddTitle span.textTitle {
+     line-height: 16px;
+     overflow: hidden;
+     text-indent: 1px;
+}
+
+.dd .ddTitle span.textTitle img {
+     padding: 0pt 2px 0pt 0pt;
+     text-align: left;
+     height: 16px !important;
+     width: 16px !important;
+}
+
+.dd .ddTitle img.selected {
+     padding: 0pt 3px 0pt 0pt;
+     vertical-align: top;
+}
+
+.dd .ddChild {
+     -moz-border-bottom-colors: none;
+     -moz-border-image: none;
+     -moz-border-left-colors: none;
+     -moz-border-right-colors: none;
+     -moz-border-top-colors: none;
+     background-color: #FFFFFF;
+     border-color: -moz-use-text-color #C3C3C3 #C3C3C3;
+     border-style: none solid solid;
+     border-width: medium 1px 1px;
+     display: none;
+     margin: 0pt;
+     overflow-x: hidden ! important;
+     overflow-y: auto;
+     position: absolute;
+     width: auto;
+}
+
+.dd .ddChild .opta a, .dd .ddChild .opta a:visited {
+     padding-left: 10px;
+}
+
+.dd .ddChild a {
+     color: #000000;
+     cursor: pointer;
+     display: block;
+     overflow: hidden;
+     padding: 3px 0pt 3px 3px;
+     text-decoration: none;
+     white-space: nowrap;
+}
+
+.dd .ddChild a:hover {
+     background: none repeat scroll 0% 0% #66CCFF;
+}
+
+.dd .ddChild a img {
+     border: 0pt none;
+     padding: 0pt 2px 0pt 0pt;
+     vertical-align: middle;
+}
+
+.dd .ddChild a.selected {
+     background: none repeat scroll 0% 0% #66CCFF;
+}
+
+.hidden {
+     display: none;
+}
+
